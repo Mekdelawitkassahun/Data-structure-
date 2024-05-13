@@ -1,0 +1,17 @@
+def delete_element(lst, index):
+    if index < 0 or index >= len(lst):
+        print("Invalid index.")
+        return lst
+
+    lst.pop(index)
+    return lst
+
+
+lst = [3, 7, 1, 9, 4]
+index = 2
+
+print("Original list:", lst)
+
+modified_lst = delete_element(lst, index)
+
+print("Modified list:", modified_lst)

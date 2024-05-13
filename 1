@@ -1,0 +1,14 @@
+sequence = input("Enter numbers with a space inbetween: ").split()
+sequence = [int(num) for num in sequence]
+search_num = int(input("Enter a number to search: "))
+def occurrences(arr, num):
+    count = 0
+    for i in arr:
+        if i == num:
+            count += 1
+    return count
+counting = occurrences(sequence, search_num)
+if counting == 0:
+    print(search_num, "is not present in the array.")
+else:
+    print(search_num, "appears", counting, "times in the array.")

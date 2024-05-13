@@ -1,0 +1,50 @@
+class QueueUsingStacks:
+    def __init__(self, capacity):
+        self.stack1 = []
+        self.stack2 = []
+        self.capacity = capacity
+    def enqueue(self, item):
+        if len(self.stack1) == self.capacity:
+            print("Queue is full")
+            return
+        self.stack1.append(item)
+    def dequeue(self):
+        if len(self.stack1 and self.stack2) == 0: 
+            print("Queue is empty")    
+        if len(self.stack2) == 0:
+            while len(self.stack1) > 0:
+                self.stack2.append(self.stack1.pop())
+        return self.stack2.pop()
+
+    def peek(self):
+        if len(self.stack1 and self.stack2) :
+            print("Queue is empty")
+            return -1
+
+        if len(self.stack2) == 0:
+            while len(self.stack1) > 0:
+                self.stack2.append(self.stack1.pop())
+
+        return self.stack2[-1]
+
+
+queue = QueueUsingStacks(7)
+queue.enqueue(3)
+queue.enqueue(2)
+queue.enqueue(1)
+
+print("Peek:", queue.peek())  
+
+print("Dequeue:", queue.dequeue())  
+print("Dequeue:", queue.dequeue())  
+
+queue.enqueue(4)
+print("Peek:", queue.peek())  
+
+queue.enqueue(5)
+queue.enqueue(6)  
+
+print(queue.dequeue())  
+print(queue.dequeue())  
+print(queue.dequeue())  
+print(queue.dequeue())  
